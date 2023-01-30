@@ -1,5 +1,7 @@
 <?php
 
+use PHPUnit\Framework\TestCase;
+
 /**
  * @author    jan huang <bboyjanhuang@gmail.com>
  * @copyright 2016
@@ -7,11 +9,11 @@
  * @link      https://www.github.com/janhuang
  * @link      http://www.fast-d.cn/
  */
-class HelperTest extends PHPUnit_Framework_TestCase
+class HelperTest extends TestCase
 {
     public function testLoad()
     {
-        $this->assertEquals(load(__DIR__.'/config/config.ini'), ['foo' => 'bar']);
-        $this->assertEquals(load(__DIR__.'/config/config.yml'), ['foo' => 'yml']);
+        $this->assertEquals(['foo' => 'bar'], load(__DIR__.'/config/config.ini'));
+        $this->assertEquals(['foo' => 'yml'], load(__DIR__.'/config/config.yml'));
     }
 }

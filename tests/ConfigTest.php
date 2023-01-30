@@ -7,15 +7,16 @@
  * @link      http://www.fast-d.cn/
  */
 use FastD\Config\Config;
+use PHPUnit\Framework\TestCase;
 
-class ConfigTest extends PHPUnit_Framework_TestCase
+class ConfigTest extends TestCase
 {
     /**
      * @var Config
      */
     protected $config;
 
-    public function setUp()
+    public function setUp(): void
     {
         $this->config = new Config([], [
             'name' => 'bar',
